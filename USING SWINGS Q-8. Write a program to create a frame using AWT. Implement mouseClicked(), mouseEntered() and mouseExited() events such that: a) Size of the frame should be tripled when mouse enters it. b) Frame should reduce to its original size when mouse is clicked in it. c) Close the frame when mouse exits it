@@ -1,0 +1,22 @@
+import java.awt.*; import javax.swing.*; import
+java.awt.event.*; public class first extends JFrame{
+public first(){ setSize(800,200);
+setTitle("first"); setVisible(true);
+addMouseListener(new MouseAdapter(){
+public void mouseEntered(MouseEvent me){
+setSize(getSize().width*3,getSize().height*3);
+}
+public void mouseClicked(MouseEvent me){ setSize(getSize().width/3,getSize().height/3);
+}
+public void mouseExited(MouseEvent me){
+System.exit(0);
+} });
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+public static void main(String args[]){
+SwingUtilities.invokeLater(new Runnable(){
+public void run(){ new first();
+}
+});
+}
+}
