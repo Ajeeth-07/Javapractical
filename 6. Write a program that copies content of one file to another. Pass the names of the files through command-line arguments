@@ -1,0 +1,37 @@
+import java.io.*; public class q6 {
+//private static String name; public static void main(String args[]){
+int i;
+FileInputStream fin=null;
+FileOutputStream fout=null; if(args.length()!=2){ System.out.println(“Give 2 files name ”);
+return;
+} try{
+fin=new FileInputStream("args[o]");
+}
+catch(FileNotFoundException e){ System.out.println("cant");
+return;
+} try{
+fout=new FileOutputStream("args[1]");
+}
+catch(FileNotFoundException e){
+System.out.println("Cannot be opened for editing");
+return;
+}
+try{ do{ i=fin.read(); fout.write(i);
+}
+while(i!=-1);
+}
+catch(IOException e){
+System.out.println("File cant be write");
+}
+try{ fin.close();
+}
+catch(IOException e){
+System.out.println("cannot close file");
+}
+try{ fout.close();
+}
+catch(IOException e){
+System.out.println("cannot close file");
+}
+}
+}
