@@ -1,0 +1,23 @@
+import java.awt.*; import java.awt.event.*;
+public class q8 extends Frame{
+q8(){
+Dimension d=new Dimension(200,200);
+setSize(d); setVisible(true);
+addMouseListener(new MouseAdapter(){ public void mouseClicked(MouseEvent me){
+setSize(d.width,d.height);
+}
+public void mouseEntered(MouseEvent me){
+setSize(3*(d.width),3*(d.height));
+}
+public void mouseExited(MouseEvent me){
+System.exit(0);
+}
+});
+addWindowListener(new WindowAdapter(){ public void windowClosing(WindowEvent we){
+System.exit(0);
+}
+});
+}
+public static void main(String args[]){ q8 a=new q8();
+}
+}
