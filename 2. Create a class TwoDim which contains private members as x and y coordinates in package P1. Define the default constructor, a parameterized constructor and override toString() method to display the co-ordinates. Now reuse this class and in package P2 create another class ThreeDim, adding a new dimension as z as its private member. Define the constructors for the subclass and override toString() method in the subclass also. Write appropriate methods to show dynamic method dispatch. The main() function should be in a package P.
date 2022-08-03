@@ -1,0 +1,37 @@
+package p1; // Package p1
+
+public class TwoDim {
+private int x,y;
+public TwoDim(){
+x=0; y=0;
+}
+public TwoDim(int x, int y){
+this.x=x; this.y=y;
+}
+@Override
+public String toString(){ return ("Coordinates are : "+x+" , "+y);
+}
+}
+package p2; // Package p2
+
+import p1.TwoDim; public class ThreeDim extends TwoDim{
+private int z;
+public ThreeDim(){
+super(); this.z=0;
+}
+public ThreeDim(int x,int y,int z){
+super(x,y); this.z=z;
+}
+@Override public String toString(){ return (super.toString()+" , "+z);
+}
+}
+package p3; // final Package p3
+
+import p1.TwoDim; import p2.ThreeDim;
+public class coordinates { public static void main(String args[]){
+TwoDim a;
+ThreeDim b=new ThreeDim(3,5,7);
+a=b;
+System.out.println(a);
+}
+}
