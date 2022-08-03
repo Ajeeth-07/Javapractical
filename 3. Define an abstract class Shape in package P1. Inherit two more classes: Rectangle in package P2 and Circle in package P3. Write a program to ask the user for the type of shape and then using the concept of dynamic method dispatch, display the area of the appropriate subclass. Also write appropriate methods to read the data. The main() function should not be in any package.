@@ -1,0 +1,40 @@
+package p1; // P1 package
+abstract public class shape { abstract public double area();
+} package p2; // P2 package
+import p1.*; public class rectangle extends shape { private double len; private double bre;
+public rectangle(){ len=0;
+bre=0;
+}
+public rectangle(double a,double b){
+len=a; bre=b;
+}
+public double area(){
+System.out.print("Are of the rectangle with len "+len+" and breadth "+bre+" is : "); return len*bre;
+}
+}
+package p3; // P3 package import p1.*;
+public class circle extends shape { private double z; public circle(){ z=0;
+}
+public circle(double c){
+z=c;
+}
+public double area(){
+System.out.print("Are of the cicle with radius "+z+" is : "); return 3.14*z*z;
+}
+}
+package p4; // final P4 package import java.util.*; import p1.*; import p2.*; import p3.*; public class thirdprac { public static void main(String args[]){ Scanner sc=new
+Scanner(System.in); shape ar[]=new shape[5];
+for(int i=0;i<5;i++){
+System.out.println("Whether want to insert for Rectangle or circle"); System.out.println("1. for rectangle 2. for circle"); int a=sc.nextInt(); if(a==1){
+System.out.println("Enter the length and breadth");
+double l,b; l=sc.nextDouble(); b=sc.nextDouble(); ar[i]=new rectangle(l,b);
+}
+else if(a==2){
+System.out.println("Enter the radius of the circle"); double rad; rad=sc.nextDouble(); ar[i]=new circle(rad);
+}
+}
+for(int i=0;i<5;i++){
+System.out.println(ar[i].area());
+}
+}
+}
