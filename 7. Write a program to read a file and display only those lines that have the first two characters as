@@ -1,0 +1,13 @@
+import java.io.*; public class q5 { public static void main(String args[]){
+try(BufferedReader br=new BufferedReader (new FileReader("C:\\Users\\VINIT DUBEY\\Documents\\Sem 2 JAVA\\txt files\\copy.txt")) ){
+String st=br.readLine(); while(st!=null){ if(st.charAt(0)=='/' && st.charAt(1)=='/'){
+System.out.println(st);
+}
+st=br.readLine();
+}
+}
+catch(IOException e){
+System.out.println("Cannot be printed");
+}
+}
+}
