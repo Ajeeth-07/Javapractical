@@ -1,0 +1,37 @@
+package swing;
+import java.awt.*; import java.awt.event.*; import javax.swing.*;
+public class ques12 extends JFrame implements ActionListener{
+int x;
+ques12(){
+Dimension d=new Dimension(600,600);
+setSize(d); setVisible(true);
+setLayout(new FlowLayout()); Button b1=new Button("A");
+// b1.setBounds(100,100,100,50);
+Button b2=new Button("B"); // b2.setBounds(320,100,100,50); b1.addActionListener(this); b2.addActionListener(this);
+add(b1); add(b2);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+@Override public void actionPerformed(ActionEvent ae){ if(ae.getActionCommand()=="A"){
+x=1; repaint();
+}
+else if(ae.getActionCommand()=="B"){
+x=2; repaint();
+}
+}
+@Override
+public void paint(Graphics g){ super.paintComponents(g);
+if(x==1){
+g.drawString("Vinit",150,120);
+g.drawString("Roll - 10806",150,170);
+g.drawString("course - BSC(CS)",150,190);
+g.drawString("College - KMV ", 150, 210);
+}
+else if(x==2){
+g.drawString("CGPA - 9.6",150,120);
+}
+}
+public static void main(String args[]){ SwingUtilities.invokeLater(new Runnable(){
+public void run(){ new ques12();
+}
+});
+}
