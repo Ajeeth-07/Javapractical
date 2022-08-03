@@ -1,0 +1,22 @@
+package swing;
+ import java.awt.*; import javax.swing.*; import java.awt.event.*;
+public class ques10 extends JFrame implements ActionListener{ public ques10(){ setSize(600,600);
+getContentPane().setBackground(Color.BLACK);
+setVisible(true);
+setLayout(new FlowLayout());
+JButton b1=new JButton("Red"); b1.setBounds(30,100,50,20); b1.addActionListener(this);
+JButton b2=new JButton("Blue"); b2.setBounds(100,100,50,20); b2.addActionListener(this);
+add(b1); add(b2);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+@Override public void actionPerformed(ActionEvent ae){ if(ae.getActionCommand()=="Red"){ getContentPane().setBackground(Color.red);
+}
+else if(ae.getActionCommand()=="Blue"){ getContentPane().setBackground(Color.BLUE);
+}
+}
+public static void main(String args[]){ SwingUtilities.invokeLater(new Runnable(){
+public void run(){ new ques10();
+}
+});
+}
+}
