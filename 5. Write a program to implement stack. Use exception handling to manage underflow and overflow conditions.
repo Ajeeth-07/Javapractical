@@ -1,0 +1,39 @@
+import java.util.Random; class overflows extends Exception{ public String toString(){
+return ("STACK OVERFLOWS");
+}
+}
+class underflows extends Exception{ public String toString(){
+return ("STACK UNDERFLOWS");
+}
+}
+class Stack{ private int arr[]=new int[3]; private int top=-1;
+void push(int ele) throws overflows{
+if(top==2) throw new overflows();
+else{ arr[++top]=ele;
+}
+}
+void pop() throws underflows {
+if(top==-1) throw new underflows();
+else
+System.out.println(arr[top]);
+top--;
+}
+}
+class Main {
+public static void main(String[] args) {
+try {
+Stack S=new Stack();
+S.push(5);
+S.push(6);
+S.push(8);
+S.pop();
+S.pop();S.pop();S.pop();
+}
+catch(overflows e){
+System.out.println("caught"+" "+e);
+}
+catch(underflows e){
+System.out.println("caught "+" "+e);
+}
+}
+}
