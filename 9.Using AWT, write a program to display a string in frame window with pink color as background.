@@ -1,0 +1,16 @@
+import java.awt.*; import java.awt.event.*;
+public class q9 extends Frame {
+q9(){
+Dimension d=new Dimension(600,600);
+setSize(d); setBackground(Color.pink); setTitle("Question 9"); //setLayout(null); setVisible(true);
+addWindowListener(new WindowAdapter(){ public void windowClosing(WindowEvent we){
+System.exit(0);
+}
+});
+}
+public void paint(Graphics g){
+g.drawString("Hello world",100,100);
+}
+public static void main(String args[]){ q9 q=new q9();
+}
+}
