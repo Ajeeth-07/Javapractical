@@ -1,0 +1,23 @@
+import java.awt.event.*; import java.awt.*; import javax.swing.*;
+public class ques11 extends JFrame {
+int x;
+String msg=""; public ques11(){
+// JFrame j=new JFrame("ques 11"); setSize(600,600); setTitle("Key board"); setVisible(true);
+addKeyListener(new KeyAdapter(){
+@Override public void keyTyped(KeyEvent ke){ msg+=ke.getKeyChar();
+repaint();
+}
+});
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+@Override public void paint(Graphics g){
+g.drawString("The typed character is : ",100,100);
+g.drawString(msg,260,100);
+}
+public static void main(String args[]){
+SwingUtilities.invokeLater(new Runnable(){
+public void run(){ new ques11();
+}
+});
+}
+}
