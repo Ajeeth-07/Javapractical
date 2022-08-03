@@ -1,0 +1,23 @@
+import java.util.*; class Underage extends Exception{
+int age;
+Underage(int age){
+this.age=age;
+}
+public String toString(){ return ("Your age("+age+")is less than 18");
+}
+}
+class exception_demo { public static void methodtest(int a) throws Underage {
+if(a<18)
+throw new Underage(a);
+}
+public static void main(String[] args) throws Exception{
+int age;
+Scanner sc=new Scanner(System.in);
+try {
+System.out.println("Enter ur age "); age=sc.nextInt(); methodtest(age);
+}
+catch(Underage e){
+System.out.println("EXCEPTION CAUGHT:\n"+e);
+}
+}
+}
