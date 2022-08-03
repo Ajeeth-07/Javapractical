@@ -1,0 +1,12 @@
+import javax.swing.*; import java.awt.*; public class swing9 extends JFrame { swing9(){ setSize(600,600); getContentPane().setBackground(Color.pink);
+setVisible(true); setLayout(new FlowLayout()); setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+@Override public void paint(Graphics g){ super.paintComponents(g);
+g.drawString("Hello World ",100,100);
+}
+public static void main(String args[]){
+SwingUtilities.invokeLater(new Runnable(){ public void run(){ new swing9();
+}
+});
+}
+}
